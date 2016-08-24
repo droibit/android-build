@@ -1,4 +1,5 @@
 ## Android Build Environment on Docker
+[![Build Status](https://travis-ci.org/droibit/android-build-env.svg?branch=master)](https://travis-ci.org/droibit/android-build-env)
 
 ##### Environment
 
