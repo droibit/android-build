@@ -1,5 +1,5 @@
 # Base on: https://github.com/uber-common/android-build-environment
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 
 MAINTAINER Shinya Kumagai "roomful.rooms@gmail.com"
 
@@ -16,20 +16,24 @@ RUN apt-get install -y oracle-java8-installer
 # Install dependencies
 RUN dpkg --add-architecture i386
 RUN apt-get update
-RUN apt-get install -yq libc6:i386 libstdc++6:i386 zlib1g:i386 libncurses5:i386 --no-install-recommends
+RUN apt-get install -yq \
+  libc6-i386 \
+  lib32stdc++6 \
+  lib32z1 \
+  --no-install-recommends
 
 # Clean Up apt-get
 RUN apt-get clean
 RUN rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install Android SDK
-RUN cd /opt
 RUN wget https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
 RUN tar -xvzf android-sdk_r24.4.1-linux.tgz
-RUN mv android-sdk-linux android-sdk
+RUN mv android-sdk-linux /opt/android-sdk
 RUN rm android-sdk_r24.4.1-linux.tgz
+RUN chown -R root.root /opt/android-sdk
 
-ENV ANDROID_COMPONENTS platform-tools,android-23,android-24,build-tools-23.0.3,build-tools-24.0.1
+ENV ANDROID_COMPONENTS platform-tools,build-tools-23.0.3,build-tools-24.0.1,android-23,android-24
 ENV GOOGLE_COMPONENTS extra-android-m2repository,extra-google-m2repository
 
 RUN echo y | /opt/android-sdk/tools/android update sdk --filter "${ANDROID_COMPONENTS}" --no-ui -a
