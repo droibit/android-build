@@ -1,5 +1,14 @@
 ## Android Build Environment on Docker
 
+##### Environment
+
+* Java8
+* Android SDK r24.4.1
+* Android SDK Build tools 23.0.3, 24.0.1
+* Android API 23, 24
+* Android Support Repository
+* Google Repository
+
 ## License
 
     The MIT License (MIT)
