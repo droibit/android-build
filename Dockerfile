@@ -13,6 +13,9 @@ RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true 
 RUN apt-get update
 RUN apt-get install -y oracle-java8-installer
 
+# Install curl
+RUN apt-get install -y curl
+
 # Install dependencies
 RUN dpkg --add-architecture i386
 RUN apt-get update
