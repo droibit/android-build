@@ -36,7 +36,7 @@ RUN mv android-sdk-linux /opt/android-sdk
 RUN rm android-sdk_r24.4.1-linux.tgz
 RUN chown -R root.root /opt/android-sdk
 
-ENV ANDROID_COMPONENTS platform-tools,build-tools-23.0.3,build-tools-24.0.3,android-23,android-24
+ENV ANDROID_COMPONENTS platform-tools,build-tools-23.0.3,build-tools-24.0.2,android-23,android-24
 ENV GOOGLE_COMPONENTS extra-android-m2repository,extra-google-m2repository
 
 RUN echo y | /opt/android-sdk/tools/android update sdk --filter "${ANDROID_COMPONENTS}" --no-ui -a
@@ -48,7 +48,7 @@ ENV ANDROID_SDK_HOME $ANDROID_HOME
 ENV PATH $PATH:$ANDROID_SDK_HOME/tools
 ENV PATH $PATH:$ANDROID_SDK_HOME/platform-tools
 ENV PATH $PATH:$ANDROID_SDK_HOME/build-tools/23.0.3
-ENV PATH $PATH:$ANDROID_SDK_HOME/build-tools/24.0.3
+ENV PATH $PATH:$ANDROID_SDK_HOME/build-tools/24.0.2
 
 # Export JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
