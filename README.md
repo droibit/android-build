@@ -4,8 +4,6 @@
 ##### Environment
 
 * Java8
-* Android SDK r24.4.1
-* Android SDK Build tools 23.0.3, 24.0.3, 25.0.2
-* Android API 23, 24, 25
-* Android Support Repository
-* Google Repository
+* Android SDK 3859397
+* Android SDK Build tools v26.0.3
+* Android API 26
