@@ -13,11 +13,12 @@ RUN dpkg --add-architecture i386 && \
 
 # Download and untar SDK
 ENV ANDROID_SDK_URL https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
-RUN curl -L "${ANDROID_SDK_URL}" -o android-sdk-linux.zip
+RUN curl -L "${ANDROID_SDK_URL}" -o android-sdk-linux.zip && \
+    rm android-sdk-linux.zip
 RUN unzip android-sdk-linux.zip -d /usr/local/android-sdk-linux
 ENV ANDROID_HOME /usr/local/android-sdk-linux
 ENV ANDROID_SDK /usr/local/android-sdk-linux
-ENV PATH $ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
+ENV PATH ${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:$PATH
 
 # Accepted Licenses
 RUN mkdir "$ANDROID_HOME/licenses" || true
