@@ -5,5 +5,5 @@
 
 * Java8
 * Android SDK 3859397
-* Android SDK Build tools v26.0.3
-* Android API 26
+* Android SDK Build tools v27.0.3
+* Android API 27

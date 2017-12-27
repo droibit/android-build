@@ -26,8 +26,8 @@ RUN echo "d56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME"/licenses/a
 
 # Install Android SDK
 RUN $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" \
-    "build-tools;26.0.3" \
-    "platforms;android-26"
+    "build-tools;27.0.3" \
+    "platforms;android-27"
 
 # Support Gradle
 ENV TERM dumb
