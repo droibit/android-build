@@ -12,7 +12,7 @@ RUN dpkg --add-architecture i386 && \
     apt-get clean
 
 # Download and untar SDK
-ENV ANDROID_SDK_URL https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
+ENV ANDROID_SDK_URL https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 RUN curl -L "${ANDROID_SDK_URL}" -o android-sdk-linux.zip
 RUN unzip android-sdk-linux.zip -d /usr/local/android-sdk-linux && \
     rm android-sdk-linux.zip
@@ -26,8 +26,7 @@ RUN echo "d56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME"/licenses/a
 
 # Install Android SDK
 RUN $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" \
-    "build-tools;27.0.3" \
-    "platforms;android-27"
+    "platforms;android-28"
 
 # Support Gradle
 ENV TERM dumb
